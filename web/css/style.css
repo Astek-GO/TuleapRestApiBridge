@@ -1,0 +1,87 @@
+/*
+ * This file is part of the project TuleapRestApiBridge
+ *
+ * Last edited by jpvantelon@astek.fr
+ *
+ * Copyright ASTEK (c) 2015.
+ */
+
+body {
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+h1 {
+    font-size: 120%;
+}
+
+ol > li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ul > li {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.list-title {
+    font-size: 110%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.code {
+    color: midnightblue;
+    background-color: lightgrey;
+    white-space: nowrap;
+}
+
+.center {
+    width: auto;
+    text-align: center;
+}
+
+.warning {
+    font-size: 110%;
+    border: 5px double darkred;
+    background-color: orangered;
+}
+
+.divTable {
+    margin: 10px;
+    padding: 10px;
+}
+
+table.table {
+    width: 400px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table.table > thead > tr > td {
+    margin: 0px;
+    padding: 5px;
+    color: white;
+    background-color: navy;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    text-align: center;
+    white-space: nowrap;
+}
+
+table.table > tbody > tr > td {
+    margin: 0px;
+    padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}

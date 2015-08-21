@@ -1,0 +1,23 @@
+{
+  "name": "astek-go/tuleap-rest-api-bridge",
+  "description": "Bridge for accessing Tuleap REST API via Jetbrains IDEs",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Jean-Philippe VANTELON",
+      "email": "jpvantelon@astek.fr"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "klein/klein": "~2.1",
+    "guzzle/guzzle": "~3.9",
+    "symfony/http-foundation": "~2.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "AstekGo\\TuleapRestApiBridge\\": "src/AstekGo/TuleapRestApiBridge"
+    }
+  }
+}

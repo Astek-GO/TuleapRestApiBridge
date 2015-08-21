@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+  ~ This file is part of the project TuleapRestApiBridge
+  ~
+  ~ Last edited by jpvantelon@astek.fr
+  ~
+  ~ Copyright ASTEK (c) 2015.
+  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuleap REST API Bridge IDE's Configuration</title>
+    <link rel="stylesheet" media="all" href="<?php echo $this->tuleapRestApiBridgeBaseUrl; ?>/css/style.css"/>
+</head>
+<body>
+<?php if ($this->tuleapRestApiBridgeHasRedirectBase && !$this->tuleapRestApiBridgeHasRedirectBaseManualConfig) { ?>
+    <h1>Tuleap REST API Bridge Application Configuration</h1>
+    <div class="warning">
+        !!! WARNING !!!<br>
+        The Tuleap REST API Bridge Application's URL is not a root URL.<br>
+        Make sure to set manually configuration variables "tuleapRestApiBridgeRootUrl" and "tuleapRestApiBridgeRedirectBase".
+    </div>
+<?php } ?>
+<h1>Tuleap REST API Bridge IDE's Configuration</h1>
+<ol>
+    <li>
+        <div class="list-title">"General" tab</div>
+        <ul>
+            <li>
+                <span class="bold underline">Server URL :</span>
+                <span class="code"><?php echo $this->escape($this->tuleapRestApiBridgeRootUrl); ?></span>
+            </li>
+            <li>
+                <span class="bold underline">Username :</span>
+                <span class="code">Your Tuleap's username</span>
+            </li>
+            <li>
+                <span class="bold underline">Password :</span>
+                <span class="code">Your Tuleap's password</span>
+            </li>
+            <li>
+                <span class="bold underline">Tracker id :</span>
+                <span class="code">The tracker id</span>
+                <span>!!! Mandatory !!! Put 0 if no value</span>
+                <span>(see "Server Configuration" tab if not present)</span>
+            </li>
+            <li>
+                <span class="bold underline">summaryFieldId :</span>
+                <span class="code">The tracker's summary field id</span>
+                <span>!!! Mandatory !!! Put 0 if no value</span>
+                <span>(see "Server Configuration" tab if not present)</span>
+            </li>
+            <li>
+                <span class="bold underline">descriptionFieldId :</span>
+                <span class="code">The tracker's description field id</span>
+                <span>!!! Mandatory !!! Put 0 if no value</span>
+                <span>(see "Server Configuration" tab if not present)</span>
+            </li>
+            <li>
+                <span class="bold underline">createdFieldId :</span>
+                <span class="code">The tracker's created field id</span>
+                <span>!!! Mandatory !!! Put 0 if no value</span>
+                <span>(see "Server Configuration" tab if not present)</span>
+            </li>
+            <li>
+                <span class="bold underline">updatedFieldId :</span>
+                <span class="code">The tracker's created field id</span>
+                <span>!!! Mandatory !!! Put 0 if no value</span>
+                <span>(see "Server Configuration" tab if not present)</span>
+            </li>
+            <li>
+                <span class="bold underline">closedFieldId :</span>
+                <span class="code">The tracker's closed field id</span>
+                <span>!!! Mandatory !!! Put 0 if no value</span>
+                <span>(see "Server Configuration" tab if not present)</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <div class="list-title">"Server Configuration" tab</div>
+        <ul>
+            <li>
+                <span class="bold underline">Login URL :</span>
+                <span class="code"><?php echo $this->escape('{serverUrl}'.$this->getUserTokenRoute); ?></span>
+                <span>(Method : <span class="code">GET</span> or <span class="code">POST</span>)</span>
+            </li>
+            <li>
+                <span class="bold underline">Tasks list URL :</span>
+                <span class="code"><?php echo $this->escape('{serverUrl}'.$this->getArtifactsListRoute); ?></span>
+                <span>(Method : <span class="code">GET</span> or <span class="code">POST</span>)</span>
+            </li>
+            <li>
+                <span class="bold underline">Single task URL :</span>
+                <span class="code"><?php echo $this->escape('{serverUrl}'.$this->getArtifactRoute); ?></span>
+                <span>(Method : <span class="code">GET</span> or <span class="code">POST</span>)</span>
+                <span>(optionnal, actually not needed)</span>
+            </li>
+            <li>
+                <span class="bold underline">XPath values configuration table :</span>
+
+                <div class="divTable">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Path</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>tasks</td>
+                            <td class="code">//artifacts/node[*]</td>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td class="code">id</td>
+                        </tr>
+                        <tr>
+                            <td>summary</td>
+                            <td class="code">summary</td>
+                        </tr>
+                        <tr>
+                            <td>description</td>
+                            <td class="code">description</td>
+                        </tr>
+                        <tr>
+                            <td>updated</td>
+                            <td class="code">updated</td>
+                        </tr>
+                        <tr>
+                            <td>created</td>
+                            <td class="code">created</td>
+                        </tr>
+                        <tr>
+                            <td>closed</td>
+                            <td class="code">closed</td>
+                        </tr>
+                        <tr>
+                            <td>issueUrl</td>
+                            <td class="code">issueUrl</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <span class="bold underline">Manage Template Variables...</span>
+
+                <div class="divTable">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <td class="center">Name</td>
+                            <td class="center">Value</td>
+                            <td class="center">Show on first tab</td>
+                            <td class="center">Hide</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>serverUrl</td>
+                            <td class="code"><?php echo $this->escape($this->tuleapRestApiBridgeRootUrl); ?></td>
+                            <td class="center"><input type="checkbox" disabled></td>
+                            <td class="center"><input type="checkbox" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>username</td>
+                            <td class="code">Your username</td>
+                            <td class="center"><input type="checkbox" disabled></td>
+                            <td class="center"><input type="checkbox" disabled></td>
+                        </tr>
+                        <tr>
+                            <td>password</td>
+                            <td class="code">Your password</td>
+                            <td class="center"><input type="checkbox" disabled></td>
+                            <td class="center"><input type="checkbox" checked disabled></td>
+                        </tr>
+                        <tr>
+                            <td>trackerId</td>
+                            <td class="code">The tracker Id</td>
+                            <td class="center"><input type="checkbox" checked></td>
+                            <td class="center"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>summaryFieldId</td>
+                            <td class="code">The tracker's summary field id<br>!!! Mandatory !!! Put 0 if no value</td>
+                            <td class="center"><input type="checkbox" checked></td>
+                            <td class="center"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>descriptionFieldId</td>
+                            <td class="code">The tracker's description field id<br>!!! Mandatory !!! Put 0 if no value</td>
+                            <td class="center"><input type="checkbox" checked></td>
+                            <td class="center"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>createdFieldId</td>
+                            <td class="code">The tracker's created field id<br>!!! Mandatory !!! Put 0 if no value</td>
+                            <td class="center"><input type="checkbox" checked></td>
+                            <td class="center"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>updatedFieldId</td>
+                            <td class="code">The tracker's updated field id<br>!!! Mandatory !!! Put 0 if no value</td>
+                            <td class="center"><input type="checkbox" checked></td>
+                            <td class="center"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>closedFieldId</td>
+                            <td class="code">The tracker's closed field id<br>!!! Mandatory !!! Put 0 if no value</td>
+                            <td class="center"><input type="checkbox" checked></td>
+                            <td class="center"><input type="checkbox"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ol>
+</body>
+</html>

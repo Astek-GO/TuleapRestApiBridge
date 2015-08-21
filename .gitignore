@@ -1,0 +1,22 @@
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+### Composer ###
+vendor/
+composer.phar
+
+### Application ###
+log/
+src/AstekGo/TuleapRestApiBridge/Ressources/Config/bridge.conf.php
+src/AstekGo/TuleapRestApiBridge/Ressources/Config/log.conf.php
+src/AstekGo/TuleapRestApiBridge/Ressources/Config/router.conf.php
